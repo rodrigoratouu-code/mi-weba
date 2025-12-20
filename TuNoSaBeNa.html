@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TuNoSaBeNa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(90deg, #1f003b, #0d171b, #011242);
+      color: #e0dedef6;
+      padding: 2em;
+      min-height: 100vh;
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.041);
+      padding: 1em;
+      text-align: center;
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #202020;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #0077cc;
+    }
+    section {
+      padding: 2em;
+      background-color: rgba(255, 255, 255, 0.048);
+      margin: 1em auto;
+      border-radius: 8px;
+      max-width: 900px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1em;
+    }
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 8px;
+      background: #000;
+    }
+    .redes a {
+      display: inline-block;
+      padding: 0.5em 1em;
+      background-color: #0077cc;
+      color: rgb(255, 255, 255);
+      border-radius: 5px;
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      font-size: 1em;
+    }
+    .redes a:hover {
+      background-color: #005fa3;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: rgba(255, 255, 255, 0.356);
+      font-size: 1em;
+    }
+    #galeria-videos {
+      padding: 2em 1em;
+      background-color: rgba(229, 80, 248, 0.418);
+      margin: 1em auto;
+      border-radius: 8px;
+      max-width: 900px;
+    }
+    .playlist audio {
+      width: 100%;
+      margin-bottom: 1em;
+      border-radius: 8px;
+      background-color: #e7e5e5;
+    }
+    @keyframes fadeInSlide {
+      0% { opacity: 0; transform: translateY(-30px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 15px #ff00cc;}
+      50% { text-shadow: 0 0 20px #ff00cc, 0 0 30px #ff00cc, 0 0 40px #ff00cc;}
+      100% { text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 15px #ff00cc;}
+    }
+    #galeria-videos h2 {
+      font-size: 2.2em;
+      color: #d8d2d2;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeInSlide 1s ease-out forwards;
+      opacity: 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    #galeria-videos h2:hover {
+      animation: glow 1.5s infinite;
+      color: #f846d4;
+      transform: scale(1.05);
+    }
+    /* Agrega esto a tu <style> existente para animar el botón de play del reproductor de música */
+audio::-webkit-media-controls-play-button {
+  animation: playPulse 1s infinite alternate;
+  filter: drop-shadow(0 0 6px #f846d4);
+}
+@keyframes playPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px #f846d4);
+  }
+  100% {
+    transform: scale(1.18);
+    filter: drop-shadow(0 0 16px #f846d4);
+  }
+}
+/* Firefox */
+audio::-moz-media-controls-play-button {
+  animation: playPulse 1.2s infinite alternate;
+  filter: drop-shadow(0 0 6px #f846d4);
+}
+    /* Responsive */
+    @media (max-width: 900px) {
+      section, #galeria-videos {
+        max-width: 98vw;
+        padding: 1.2em 0.5em;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 0.5em;
+      }
+      header h1 {
+        font-size: 2.3em;
+      }
+      #menu-toggle {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+        display: none;
+        background: rgba(255,255,255,0.97);
+        position: absolute;
+        width: 90vw;
+        left: 5vw;
+        top: 60px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        z-index: 100;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      section, #galeria-videos {
+        margin: 0.5em 0;
+        padding: 1em 0.3em;
+      }
+      iframe {
+        height: 160px;
+      }
+      .redes a {
+        display: block;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color: rgb(241, 287, 17);">TuNoSaBeNa</h1>
+  </header>
+  <section id="galeria-videos">
+    <h2>🎥  FONTANERO MUSIC </h2>
+    <p>Canciones que animan 'Quieres mas' Ya sabes dónde encontrarme </p>
+    <div class="playlist">
+      <div>
+        <h3>LATINO MIX 2023</h3>
+        <audio controls>
+          <source src="https://dl.dropboxusercontent.com/scl/fi/tzka46nhcclxieizxnn0i/LATINO-MIX-2023.mp3?rlkey=kpa8xwmaso8kdcm0j1zt6squd&st=f54ztlwt" type="audio/mpeg">
+          Tu navegador no soporta el audio.
+        </audio>
+      </div>
+      <div>
+        <h3>Salsa Vieja</h3>
+        <audio controls>
+          <source src="https://dl.dropboxusercontent.com/scl/fi/mxxv0bwdrz93cgqqlfrpt/Salsa-Vieja-MP3.mp3?rlkey=c5nrbj8j22ybjxxnxw98fm66d&st=rsec3mr0" type="audio/mpeg">
+          Tu navegador no soporta el audio.
+        </audio>
+    </div>
+  </section>
+  <section id="videos">
+  <h2>🎬 VideosRodri recomendados potencia tu empresa LUMINARTE con Ai</h2>
+  <div class="video-grid">
+    <div class="video-item">
+        <iframe width="980" height="551" src="https://www.youtube.com/embed/VaVC3PAWqLk" title="El Experto en Cáncer: &quot;El alimento cotidiano que está empeorando el cáncer!&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="378" height="671" src="https://www.youtube.com/embed/YflRLhAY-_k" title="TRUCO para camuflar ChatGPT en tu WhatsApp 😮#ia #ai #inteligenciaartificial #chatgpt #bigdata #data" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="946" height="539" src="https://www.youtube.com/embed/yfEQRqFo2bI" title="Experta en neurociencia: ¡Evidencia de que podemos comunicarnos después de la muerte!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="980" height="551" src="https://www.youtube.com/embed/oIiv_335yus" title="El experto en comunicación número 1: ¡Este error al hablar hace que la gente no te quiera!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="993" height="559" src="https://www.youtube.com/embed/_T13XYqpARc" title="He decidido hacer esto público…" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="487" height="866" src="https://www.youtube.com/embed/uyD-Oq3llj0" title="NANO BANANA Explicado Fácil#ia #ai #inteligenciaartificial #chatgpt #bigdata #bilbao #edicionIA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="487" height="866" src="https://www.youtube.com/embed/M-PF2ig8PIc" title="💡TRUCO RUNWAY TU CLON DIGITAL#ia #ai #inteligenciaartificial #chatgpt #bigdata #data #bilbao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="993" height="559" src="https://www.youtube.com/embed/8ozmW3rExMA" title="Cómo venderle hielo a un pingüino (y que vuelva por más) Audiolibro Completo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1321" height="743" src="https://www.youtube.com/embed/cFrmUvS1MU0" title="¡Los IMPACTANTES efectos secundarios de respirar ASÍ!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="993" height="559" src="https://www.youtube.com/embed/UNGpoO3NHC8" title="La IA de TikTok HUMILLA a Google (Pruébala GRATIS) 🤯" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1321" height="743" src="https://www.youtube.com/embed/J6h9XZ60rJ4" title="5 NUEVAS funciones de NotebookLM que por fin llegan en ESPAÑOL 🤯" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1321" height="743" src="https://www.youtube.com/embed/SMh7WMCJ9C8" title="675 Días Sin YouTube | 8 Verdades Sobre Crear Patrimonio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1321" height="743" src="https://www.youtube.com/embed/5Jk5XCLAr6w" title="Experto n.º 1 en medicina herbal: ¡Este medicamento de venta libre te está matando silenciosamente!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1321" height="743" src="https://www.youtube.com/embed/H7sWFgZ7fhU" title="La primera IA de diseño TODO EN UNO (y es gratis)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1321" height="743" src="https://www.youtube.com/embed/Wa4TJxlgZLc" title="Cómo Crear Tu Clon de Contenido Viral (curso completo)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1228" height="691" src="https://www.youtube.com/embed/1irqukXfSKM" title="La CLAVE para LOGRAR TODAS TUS METAS // Margarita Pasos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1326" height="746" src="https://www.youtube.com/embed/v_fvXoAMgyU" title="Lo que Todo Vendedor debe Superar  // Margarita Pasos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1326" height="746" src="https://www.youtube.com/embed/JV0VKAw3kPs" title="Empíeza a hacer esto para que TENGAS ÉXITO EN 2024 // Margarita Pasos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1326" height="746" src="https://www.youtube.com/embed/-sdSThKPkuo" title="Si QUIERES SER MILLONARIO debes saber estos 5 SECRETOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="827" height="465" src="https://www.youtube.com/embed/xM3tM7RKxkU" title="¿Cuáles con las Claves del Éxito?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="993" height="559" src="https://www.youtube.com/embed/xcZXIXxw-Tk" title="¿Cómo Trazarte Metas En 3 Pasos Hoy? | Margarita Pasos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="1326" height="746" src="https://www.youtube.com/embed/fFo7VghFdPI" title="Margarita Pasos: Como CAMBIAR Tu MENTE para Ganar mas Dinero y Hacer mas Ventas en tu Negocio?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>      
+</section>
+  <section id="recomendacion-navegador">
+    <h2>🧭 Recomendación de Rodrigo</h2>
+    <p>Para una mejor experiencia, abre este sitio en Navegadores  <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong> o <strong>Microsoft Edge</strong>.</p>
+  </section>
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <div id="chat">
+      <p>Chat en vivo próximamente...</p>
+    </div>
+    <div class="redes">
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">Watsapp</a>  
+      <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 LUMINARTE. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    // Menú responsive para móviles
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+    // Animación de título MUSIC EDWIN al cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      const h2 = document.querySelector('#galeria-videos h2');
+      h2.style.opacity = '1';
+    });
+  </script>
+</body>
+</html>
