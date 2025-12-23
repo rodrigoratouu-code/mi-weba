@@ -1,221 +1,207 @@
-<!DOCTYPE html>
+Skip to content
+Copilot navigation
+Quick links
+New chat
+Agents
+Spaces
+Spark
+Preview
+Chats
+Today
+Mejoras en HTML y accesibilidad
+
+Collapse
+
+
+rodrigoratouu-code
+Copilot Free
+Condense sidebar
+
+Mejoras en HTML y accesibilidad
+
+
+Workbench
+
+README.md
+
+README.md
+Press Delete to close.
+
+
+354 lines · 11 KB
+
+README.md file contents
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TuNoSaBeNa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="TuNoSaBeNa - Playlist y vídeos recomendados por Rodri. Catálogo SIMON 270 2025." />
+  <meta name="theme-color" content="#0044ff" />
+  <title>TuNoSaBeNa — FONTANERO MUSIC</title>
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #122f65 0%, #400461 100%);
-      color: #222;
-      padding: 2em;
-      min-height: 100vh;
+    /* Variables y reset ligero */
+    :root{
+      --bg-start: #0044ff;
+      --bg-end: #ff0033;
+      --glass-bg: rgba(255,255,255,0.55);
+      --glass-strong: rgba(255,255,255,0.8);
+      --text: #111;
+      --muted-text: rgba(17,17,17,0.75);
+      --accent-1: #0072ff;
+      --accent-2: #00c6ff;
+      --radius: 12px;
+      --card-radius: 16px;
+      --max-width: 900px;
+      --gap: 1rem;
+      font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
     }
-    header {
-      text-align: center;
-      padding: 1.5em;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 16px;
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--text);
+      background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      background-attachment: fixed;
+      background-size: cover;
+      padding:2rem;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    section {
-      padding: 2em;
-      margin: 1.5em auto;
-      border-radius: 16px;
-      max-width: 900px;
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(18px) saturate(160%);
-      -webkit-backdrop-filter: blur(18px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 30px rgba(0,0,0,0.15);
-    }
-    h1, h2, h3 {
-      color: #111;
-    }
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1em;
-    }
-    .video {
-      position: relative;
-      cursor: pointer;
-      background: rgba(255,255,255,0.35);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .video:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .video img {
-      width: 100%;
-      display: block;
-    }
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3em;
+
+    header{
+      max-width:var(--max-width);
+      margin:0 auto 1.5rem;
+      padding:1.25rem;
+      text-align:center;
+      background: rgba(255,255,255,0.12);
+      border-radius:var(--card-radius);
       color: white;
-      text-shadow: 0 0 20px rgba(255,255,255,0.7);
-      opacity: 0.85;
-      transition: transform 0.2s, opacity 0.2s;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      backdrop-filter: blur(8px) saturate(140%);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .video:hover .play-button {
-      transform: translate(-50%, -50%) scale(1.1);
-      opacity: 1;
+
+    main{
+      max-width:var(--max-width);
+      margin:0 auto;
+      display:grid;
+      gap:1.25rem;
     }
-    audio {
-      width: 100%;
-      border-radius: 8px;
-      background-color: rgba(255,255,255,0.3);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.4);
+
+    section{
+      padding:1.25rem;
+      border-radius:var(--card-radius);
+      background: var(--glass-bg);
+      color: #fff;
+      backdrop-filter: blur(14px) saturate(150%);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform .18s ease, box-shadow .18s ease;
     }
-    .catalogo-card {
-      text-align: center;
-      padding: 2em;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.4);
-      box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+
+    section:hover{ transform: translateY(-4px); box-shadow: 0 10px 34px rgba(0,0,0,0.18); }
+
+    h1,h2,h3{ margin:0 0 .5rem; color: #fff; }
+    p{ margin:.25rem 0 .75rem; color: rgba(255,255,255,0.9); }
+
+    /* Playlist (audio) */
+    .playlist{
+      display:grid;
+      gap:.75rem;
+      grid-template-columns: 1fr;
     }
-    .catalogo-card button {
-      margin-top: 1em;
-      padding: 0.8em 1.8em;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 30px;
-      background: linear-gradient(90deg, #0072ff, #00c6ff);
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .catalogo-card button:hover {
-      background: linear-gradient(90deg, #0055cc, #00aaff);
-      transform: scale(1.05);
-    }
-    footer {
-      text-align: center;
-      padding: 1em;
-      background: rgba(255,255,255,0.55);
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.4);
-      margin-top: 2em;
-      font-size: 1em;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1 class="titulo-principal">TuNoSaBeNa</h1>
-  </header>
-
-  <section id="galeria-videos">
-    <h2>🎵 FONTANERO MUSIC</h2>
-    <p>Canciones que animan. ¿Quieres más? Ya sabes dónde encontrarme.</p>
-    <div class="playlist">
-      <div>
-        <h3>LATINO MIX 2023</h3>
-        <audio controls>
-          <source src="https://dl.dropboxusercontent.com/scl/fi/tzka46nhcclxieizxnn0i/LATINO-MIX-2023.mp3?rlkey=kpa8xwmaso8kdcm0j1zt6squd&st=f54ztlwt" type="audio/mpeg">
-        </audio>
-      </div>
-      <div>
-        <h3>Salsa Vieja</h3>
-        <audio controls>
-          <source src="https://dl.dropboxusercontent.com/scl/fi/mxxv0bwdrz93cgqqlfrpt/Salsa-Vieja-MP3.mp3?rlkey=c5nrbj8j22ybjxxnxw98fm66d&st=rsec3mr0" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2>🎬 VideosRodri recomendados</h2>
-    <div class="video-grid" id="videoGrid"></div>
-  </section>
-
-  <section id="catalogo">
-    <h2>📘 Catálogo SIMON 270</h2>
-    <div class="catalogo-card">
-      <p>Descubre el catálogo completo de productos SIMON 270 para 2025.</p>
-      <a href="Simon270_Catalogo_2025.pdf" target="_blank">
-        <button>Ver Catálogo</button>
-      </a>
-    </div>
-  </section>
-  <section id="inspiracion">
-  <h2>🛏️ Inspiración Pinterest</h2>
-  <div class="catalogo-card">
-    <p>Diseño de cabecera tapizada visto desde varios ángulos. Ideal para ambientes modernos y sobrios.</p>
-    <a href="https://es.pinterest.com/pin/211174975918470/" target="_blank">
-      <img src="https://i.pinimg.com/736x/70/95/54/709554e6be8da8d6c4483c4f2e93c630.jpg" alt="Cabecera tapizada Pinterest" style="max-width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.1); margin-top:1em;">
-    </a>
-    <a href="https://es.pinterest.com/pin/211174975918470/" target="_blank">
-      <button>Ver en Pinterest</button>
-    </a>
-  </div>
-</section>
-  <footer>
-    <p>&copy; 2025 LUMINARTE. Todos los derechos reservados.</p>
-  </footer>
-
-  <script>
-    const videos = [
-      "hCW2NHbWNwA",
-      "VaVC3PAWqLk",
-      "YflRLhAY-_k",
-      "yfEQRqFo2bI",
-      "oIiv_335yus",
-      "UNGpoO3NHC8",
-      "JV0VKAw3kPs",
-      "Lms0IAqYXHU"
-    ];
-
-    const videoGrid = document.getElementById("videoGrid");
-    let currentVideo = null;
-
-    videos.forEach(id => {
-      const div = document.createElement("div");
-      div.className = "video";
-      div.innerHTML = `
-        <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Video preview">
-        <div class="play-button"></div>
-      `;
-      div.addEventListener("click", () => {
-        if (currentVideo && currentVideo !== div) {
-          currentVideo.innerHTML = `
-            <img src="https://img.youtube.com/vi/${currentVideo.dataset.id}/hqdefault.jpg" alt="Video preview">
-            <div class="play-button">▶️</div>
-          `;
-        }
-        div.dataset.id = id;
-        div.innerHTML = `
-          <iframe width="100%" height="200" src="https://www.youtube.com/embed/${id}?autoplay=1"
-            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        `;
-        currentVideo = div;
-      });
-      div.dataset.id = id;
-      videoGrid.appendChild(div);
-    });
-  </script>
-</body>
-</html>
-
+    .track{
+      background: rgba(255,255,255,0.06);
+      padding:.75rem;
+      border-radius:12px;
