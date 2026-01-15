@@ -175,13 +175,27 @@
   <div class="catalogo-card">
     <p>Diseño de cabecera tapizada visto desde varios ángulos. Ideal para ambientes modernos y sobrios.</p>
     <a href="https://es.pinterest.com/pin/211174975918470/" target="_blank">
-      <img src="https://i.pinimg.com/736x/70/95/54/709554e6be8da8d6c4483c4f2e93c630.jpg" alt="Cabecera tapizada Pinterest" style="max-width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.1); margin-top:1em;">
+      <img src="https://i.pinimg.com/736x/70/95/54/709554e6be8da8d6c4483c4f2e93c630.jpg" alt="Cabecera tapizada Pinterest" style="max-width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,[...]"/>
     </a>
     <a href="https://es.pinterest.com/pin/211174975918470/" target="_blank">
       <button>Ver en Pinterest</button>
     </a>
   </div>
 </section>
+
+  <!-- Nuevo bloque solicitado: Chat autónomos -->
+  <section id="chat-autonomos">
+    <h2>💬 Chat autónomos</h2>
+    <div class="catalogo-card">
+      <p>Interactúa con nuestros chatbots autónomos para obtener respuestas rápidas o divertirte. Este es un bloque de ejemplo que puedes conectar con tu servicio de chat favorito (iframe, WebChat, o integración propia).</p>
+      <button id="openChat">Abrir Chat</button>
+      <div id="chatContainer" style="display:none; margin-top:1em;">
+        <!-- Placeholder: reemplaza el src por la URL de tu chat si la tienes -->
+        <iframe src="about:blank" title="Chat Autónomos" style="width:100%;height:300px;border-radius:12px;border:1px solid rgba(0,0,0,0.08)"></iframe>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 LUMINARTE. Todos los derechos reservados.</p>
   </footer>
@@ -230,7 +244,15 @@
       div.dataset.id = id;
       videoGrid.appendChild(div);
     });
+
+    // Código para el bloque de Chat Autónomos
+    const openChatBtn = document.getElementById('openChat');
+    if (openChatBtn) {
+      openChatBtn.addEventListener('click', () => {
+        const container = document.getElementById('chatContainer');
+        if (container) container.style.display = container.style.display === 'none' ? 'block' : 'none';
+      });
+    }
   </script>
 </body>
 </html>
-
