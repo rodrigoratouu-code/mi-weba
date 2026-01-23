@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio</title>
+
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #122f65 0%, #400461 100%);
+    padding: 2em;
+    color: white;
+    text-align: center;
+  }
+
+  .volver {
+    display: inline-block;
+    margin-bottom: 1.5em;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+
+  iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+    border-radius: 12px;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="volver" onclick="history.back()">⬅️ Volver atrás</div>
+
+  <iframe src="https://rdomiplayer.com/landing/radio/1596/1"></iframe>
+
+</body>
+</html>
