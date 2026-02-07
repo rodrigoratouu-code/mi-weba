@@ -14,261 +14,160 @@
 <meta name="twitter:description" content="Bienvenido a mi sitio web" />
 <meta name="twitter:image" content="https://rodrigoratouu-code.github.io/mi-weba/imagen.jpg" />
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TuNoSaBeNa</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #122f65 0%, #400461 100%);
-      color: #222;
-      padding: 2em;
-      min-height: 100vh;
-    }
-      
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.164);
-      padding: 1.2em;
-      border-radius: 16px;
-      max-width: 900px;
-      margin: 0 auto;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-      transition: backdrop-filter 0.3s ease, background 0.3s ease;
-    }
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emisoras de Radio Latinas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    
-    h1 {
-      color: #fff;
-      font-size: 2.5em;
-      margin: 0;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-    section {
-      padding: 2em;
-      margin: 1.5em auto;
-      border-radius: 16px;
-      max-width: 900px;
-      background: rgba(255, 255, 255, 0.233);
-      backdrop-filter: blur(18px) saturate(160%);
-      -webkit-backdrop-filter: blur(18px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.103);
-      box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 30px rgba(0,0,0,0.15);
-    }
-    h2, h3 {
-      color: #111;
-    }
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1em;
-    }
-    .video {
-      position: relative;
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.116);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .video:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .video img {
-      width: 100%;
-      display: block;
-    }
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3em;
-      color: white;
-      text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      opacity: 0.85;
-      transition: transform 0.2s, opacity 0.2s;
-    }
-    .video:hover .play-button {
-      transform: translate(-50%, -50%) scale(1.1);
-      opacity: 1;
-    }
-    audio {
-      width: 100%;
-      border-radius: 8px;
-      background-color: rgba(255, 255, 255, 0.171);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.199);
-      margin-top: 0.5em;
-    }
-    .playlist > div {
-      margin-bottom: 1.5em;
-    }
-    .catalogo-card {
-      text-align: center;
-      padding: 2em;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.226);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.171);
-      box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-    }
-    .catalogo-card button {
-      margin-top: 1em;
-      padding: 0.8em 1.8em;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 30px;
-      background: linear-gradient(90deg, #0072ff, #00c6ff);
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .catalogo-card button:hover {
-      background: linear-gradient(90deg, #0055cc, #00aaff);
-      transform: scale(1.05);
-    }
-    .catalogo-card img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      margin-top: 1em;
-    }
-    #chatContainer {
-      margin-top: 1em;
-      padding: 1em;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 12px;
-      min-height: 300px;
-    }
-    footer {
-      text-align: center;
-      padding: 1em;
-      background: rgba(255, 255, 255, 0.164);
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.185);
-      margin-top: 2em;
-      font-size: 1em;
-      color: #fff;
-    }
-  </style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .radio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .radio-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .radio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.3);
+            border-color: rgba(233, 69, 96, 0.5);
+        }
+
+        .radio-image {
+            width: 250px;
+            height: 150px;
+            border-radius: 10%;
+            margin: 0 auto 25px;
+            object-fit: cover;
+            border: 4px solid rgba(233, 69, 96, 0.6);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .radio-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #45e989 0%, #f11c5c 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+            border: 2px solid transparent;
+        }
+
+        .radio-button:hover {
+            background: linear-gradient(135deg, #0bffae 0%, #ffffff 100%);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 253, 254, 0.6);
+            border-color: rgba(255, 255, 255, 0.89);
+        }
+
+        .radio-button:active {
+            transform: scale(0.98);
+        }
+
+        .radio-name {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .radio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .radio-card {
+                padding: 25px;
+            }
+        }
+
+        /* Efecto de onda al hacer clic */
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1 class="titulo-principal">TuNoSaBeNa</h1>
-  </header>
+    <div class="container">
+        <h1>🎵Radio Latinas iBE </h1>
+        
+        <div class="radio-grid">
+            <!-- Radio 1: Olímpica Stereo -->
+            <div class="radio-card">
+                <img src="radiocol.webp" alt="Olímpica Stereo Medellín" class="radio-image">
+                <div class="radio-name">Olímpica Stereo Medellín</div>
+                <a href="https://www.emisorascolombianas.co/olimpica-stereo-medellin"  
+                class="radio-button">
+                    ▶ Escuchar Ahora
+                </a>
+            </div>
 
-
-  <section id="MUSIC">
-    <h2>🎵 FONTANERO MUSIC 🎵</h2>
-    <p>Canciones que animan. ¿Quieres más? Ya sabes dónde encontrarme.</p>
-    <div class="playlist">
-      <div>
-        <h3>LATINO MIX 2023</h3>
-        <audio controls>
-          <source src="https://dl.dropboxusercontent.com/scl/fi/tzka46nhcclxieizxnn0i/LATINO-MIX-2023.mp3?rlkey=kpa8xwmaso8kdcm0j1zt6squd&st=f54ztlwt" type="audio/mpeg">
-        </audio>
-      </div>
-      <div>
-        <h3>Salsa Vieja</h3>
-        <audio controls>
-          <source src="https://dl.dropboxusercontent.com/scl/fi/mxxv0bwdrz93cgqqlfrpt/Salsa-Vieja-MP3.mp3?rlkey=c5nrbj8j22ybjxxnxw98fm66d&st=rsec3mr0" type="audio/mpeg">
-        </audio>
-      </div>
+            <!-- Radio 2: Alofoke -->
+            <div class="radio-card">
+                <img src="alofoke.webp" alt="Alofoke Radio" class="radio-image">
+                <div class="radio-name">Alofoke Radio</div>
+                <a href="https://rdomiplayer.com/landing/radio/1596/1" 
+                class="radio-button">
+                    ▶ Escuchar Ahora
+                </a>
+            </div>
+        </div>
     </div>
-  </section>
-
-  <section id="videos">
-    <h2>🎬 VideosRodri recomendados</h2>
-    <div class="video-grid" id="videoGrid"></div>
-  </section>
-
-  <section id="inspiracion">
-    <h2>h2</h2>
-    <div class="catalogo-card">
-    </div>
-  </section>
-
-  <section id="catalogo">
-    <h2>h2</h2>
-    <div class="catalogo-card">
-      <p>MUSICA PA GO SA .</p>
-      <a href="radio.html" target="_self">Abrir aquí</a>
-      </a>
-    </div>
-  </section>
-
-  <script>
-    const videos = [
-      "KHnm5Ia40i0",
-      "I_w81rptxkc",
-      "rBUpQN1nOX4",
-      "4UvwwnF6KR8", 
-      "hL-xdtwUEwE",
-      "70lNyKYykhw", 
-      "hCW2NHbWNwA",
-      "iStEHuFnF0I",
-      "VaVC3PAWqLk",
-      "YflRLhAY-_k",
-      "yfEQRqFo2bI",
-      "oIiv_335yus",
-      "UNGpoO3NHC8",
-      "JV0VKAw3kPs",
-      "Lms0IAqYXHU"
-    ];
-
-    const videoGrid = document.getElementById("videoGrid");
-    let currentVideo = null;
-
-    videos.forEach(id => {
-      const div = document.createElement("div");
-      div.className = "video";
-      div.innerHTML = `
-        <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Video preview">
-        <div class="play-button">▶️</div>
-      `;
-      div.addEventListener("click", () => {
-        if (currentVideo && currentVideo !== div) {
-          const prevId = currentVideo.dataset.id;
-          currentVideo.innerHTML = `
-            <img src="https://img.youtube.com/vi/${prevId}/hqdefault.jpg" alt="Video preview">
-            <div class="play-button">▶️</div>
-          `;
-        }
-        div.innerHTML = `
-          <iframe width="100%" height="200" src="https://www.youtube.com/embed/${id}?autoplay=1"
-            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        `;
-        currentVideo = div;
-      });
-      div.dataset.id = id;
-      videoGrid.appendChild(div);
-    });
-
-    const openChatBtn = document.getElementById('openChat');
-    if (openChatBtn) {
-      openChatBtn.addEventListener('click', () => {
-        const container = document.getElementById('chatContainer');
-        if (container) {
-          container.style.display = container.style.display === 'none' ? 'block' : 'none';
-        }
-      });
-    }
-
-  </script>
 </body>
 </html>
