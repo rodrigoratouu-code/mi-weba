@@ -58,8 +58,8 @@ Claude es IA y puede cometer errores. Por favor, verifica nuevamente las respues
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Mi Web Personal" />
-<meta name="twitter:description" content="Bienvenido a mi sitio web creado con GitHub Pages." />
+<meta name="twitter:title" content="Mi Web Dans" />
+<meta name="twitter:description" content="Bienvenido a mi sitio web" />
 <meta name="twitter:image" content="https://rodrigoratouu-code.github.io/mi-weba/imagen.jpg" />
 
   <meta charset="UTF-8" />
