@@ -52,7 +52,7 @@ Claude es IA y puede cometer errores. Por favor, verifica nuevamente las respues
 <head>
 <meta property="og:title" content="Mi Web Personal" />
 <meta property="og:description" content="Bienvenido a mi sitio web creado con GitHub Pages." />
-<meta property="og:image" content="https://rodrigoratouu-code.github.io/mi-weba/assets/LOGOAS..webp" />
+<meta property="og:image" content="https://rodrigoratouu-code.github.io/mi-weba/assets/LOGOAS.webp" />
 <meta property="og:url" content="https://rodrigoratouu-code.github.io/mi-weba" />
 <meta property="og:type" content="website" />
 
