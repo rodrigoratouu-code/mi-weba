@@ -50,6 +50,18 @@ Claude es IA y puede cometer errores. Por favor, verifica nuevamente las respues
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta property="og:title" content="Mi Web Personal" />
+<meta property="og:description" content="Bienvenido a mi sitio web creado con GitHub Pages." />
+<meta property="og:image" content="https://rodrigoratouu-code.github.io/mi-weba/LOGO AS..webp" />
+<meta property="og:url" content="https://rodrigoratouu-code.github.io/mi-weba" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mi Web Personal" />
+<meta name="twitter:description" content="Bienvenido a mi sitio web creado con GitHub Pages." />
+<meta name="twitter:image" content="https://rodrigoratouu-code.github.io/mi-weba/imagen.jpg" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TuNoSaBeNa</title>
